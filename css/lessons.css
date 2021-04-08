@@ -10728,5 +10728,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+h1, .h1 {
+  text-decoration: underline;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.navbar {
+  background-color: #111;
+}
 
 /*# sourceMappingURL=lessons.css.map */

@@ -4,26 +4,37 @@
 @import "../bootstrap/source/scss/mixins";
 
 // Variable overrides
-$body-bg:       #333;
-$body-color:    #fff;
+$body-bg: #333;
+$body-color: #fff;
 
-$accordion-color:   #fff;
-$accordion-bg:      #111;
+$accordion-color: #fff;
+$accordion-bg: #111;
 
-$accordion-button-color:        #fff;
+$accordion-button-color: #fff;
 $accordion-button-active-color: #fff;
 
-$accordion-button-bg:           $secondary;
-$accordion-button-active-bg:    $accordion-button-bg;
+$accordion-button-bg: $secondary;
+$accordion-button-active-bg: $accordion-button-bg;
 
 $accordion-border-width: 0;
 
-$accordion-icon-color:          $accordion-color;
-$accordion-icon-active-color:   $accordion-color;
+$accordion-icon-color: $accordion-color;
+$accordion-icon-active-color: $accordion-color;
 
 // Icon color depends on 'fill' attribute in url arguments
-$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
-$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 
 // Import required for above changes to take effect
 @import "../bootstrap/source/scss/bootstrap.scss";
+
+// Other custom SCSS
+h1 {
+    text-decoration: underline;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.navbar {
+    background-color: #111;
+}
