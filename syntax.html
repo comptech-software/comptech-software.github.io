@@ -12,11 +12,77 @@
 </head>
 <body>
     <div class="container">
-        <h2>Printing</h2>
-        <pre class="rounded language-python"><code><!--
-         -->print("Hello, world!")
-<!--     -->print(3 + 2)<!--
-     --></code></pre>
+        <div id="printing">    
+            <h2>Printing</h2>
+            <pre class="rounded language-python"><code><!--
+             -->print("Hello, world!")
+<!--         -->print(3 + 2)
+<!--         -->print("My favorite color is " + fav_color)<!--
+         --></code></pre>
+        </div>
+        <div id="comments">
+            <h2>Comments</h2>
+            <pre class="rounded language-python"><code><!--
+             --># This is a single-line comment
+
+<!--         -->"""
+<!--         -->Triple quotes can
+<!--         -->be used for
+<!--         -->multiline comments
+<!--         -->"""<!--
+         --></code></pre>
+        </div>
+        <div id="variables">
+            <h2>Variables</h2>
+            <pre class="rounded language-python"><code><!--
+             -->name = "Chris"
+<!--         -->apples = 7
+<!--         -->apples -= 1<!--
+         --></code></pre>
+        </div>
+        <div id="lists">
+            <h2>Lists</h2>
+            <pre class="rounded language-python"><code><!--
+             -->empty_list = []
+<!--         -->colors = ["red", "green", "blue"]<!--
+         --></code></pre>
+        </div>
+        <div id="if-statements">
+            <h2>If Statements</h2>
+            <pre class="rounded language-python"><code><!--
+             -->if x > 3:
+<!--         -->    print("x is greater than 3.")
+
+<!--         -->if y == True:
+<!--         -->    print(True)
+<!--         -->elif y == False:
+<!--         -->    print(False)
+<!--         -->else:
+<!--         -->    print("Unexpected value of y")
+
+<!--         --># Comparison operators: ==, !=, &lt;, &gt;, &lt;=, &gt;=<!--
+         --></code></pre>
+        </div>
+        <div id="while-loops">
+            <h2>While Loops</h2>
+            <pre class="rounded language-python"><code><!--
+             -->x = 5
+<!--         -->while x > 0:
+<!--         -->    print(x)
+<!--         -->    x -= 1<!--
+         --></code></pre>
+        </div>
+        <div id="for-loops">
+            <h2>For Loops</h2>
+            <pre class="rounded language-python"><code><!--
+             -->for i in range(10):
+<!--         -->    x += 1
+
+<!--         -->genres = ["rock", "hip-hop", "jazz"]
+<!--         -->for genre in genres:
+<!--         -->    print(genre)<!--
+         --></code></pre>
+        </div>
     </div>
     
     <script src="prism/prism.js"></script>
