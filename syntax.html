@@ -45,7 +45,8 @@
             <pre class="rounded language-python"><code><!--
              -->print("Hello, world!")
 <!--         -->print(3 + 2)
-<!--         -->print("My favorite color is " + fav_color)<!--
+<!--         -->print("My favorite color is " + fav_color)
+<!--         -->print("I have {} apples".format(num_apples))<!--
          --></code></pre>
         </div>
         <div id="comments">
@@ -60,12 +61,19 @@
 <!--         -->"""<!--
          --></code></pre>
         </div>
+        <div id="importing-modules">
+            <h2>Importing Modules</h2>
+            <pre class="rounded language-python"><code><!--
+             -->import sys
+<!--         -->from time import sleep<!--
+         --></code></pre>
+        </div>
         <div id="variables">
             <h2>Variables</h2>
             <pre class="rounded language-python"><code><!--
              -->name = "Chris"
 <!--         -->apples = 7
-<!--         -->apples -= 1<!--
+<!--         -->apples += 3<!--
          --></code></pre>
         </div>
         <div id="lists">
@@ -75,6 +83,18 @@
 <!--         -->colors = ["red", "green", "blue"]<!--
          --></code></pre>
         </div>
+        <div id="dictionaries">
+            <h2>Dictionaries</h2>
+            <pre class="rounded language-python"><code><!--
+             -->pizza_prices = {
+<!--         -->    "cheese": 12,
+<!--         -->    "pepperoni": 15,
+<!--         -->    "vegetable": 13
+<!--         -->}
+
+<!--         -->print("A pepperoni pizza costs {} dollars.".format(pizza_prices["pepperoni"]))<!--
+         --></code></pre>
+        </div>
         <div id="if-statements">
             <h2>If Statements</h2>
             <pre class="rounded language-python"><code><!--
@@ -82,9 +102,9 @@
 <!--         -->    print("x is greater than 3.")
 
 <!--         -->if y == True:
-<!--         -->    print(True)
+<!--         -->    print("Yes")
 <!--         -->elif y == False:
-<!--         -->    print(False)
+<!--         -->    print("No")
 <!--         -->else:
 <!--         -->    print("Unexpected value of y")
 
@@ -109,6 +129,40 @@
 <!--         -->genres = ["rock", "hip-hop", "jazz"]
 <!--         -->for genre in genres:
 <!--         -->    print(genre)<!--
+         --></code></pre>
+        </div>
+        <div id="functions">
+            <h2>Functions</h2>
+            <pre class="rounded language-python"><code><!--
+             -->def my_function():
+<!--         -->    print("Hello, world!")
+
+<!--         -->my_function()
+
+<!--         -->def add_two_numbers(num1, num2):
+<!--         -->    final_sum = num1 + num2
+<!--         -->    return final_sum
+
+<!--         -->my_sum = add_two_numbers(9, 10)<!--
+         --></code></pre>
+        </div>
+        <div id="classes-and-objects">
+            <h2>Classes & Objects</h2>
+            <pre class="rounded language-python"><code><!--
+             --># Create a class
+<!--         -->class Person:
+<!--         -->    def __init__(self, name, age):
+<!--         -->        self.name = name
+<!--         -->        self.age = age
+
+<!--         -->    def age_after_years(self, years):
+<!--         -->        return "In {} years, I will be {} years old.".format(years, self.age + years)
+
+<!--         --># Create an object using our class
+<!--         -->joe = Person("Joe", 25)
+
+<!--         -->print(joe.name)
+<!--         -->print(joe.age_after_years(5))<!--
          --></code></pre>
         </div>
     </div>
