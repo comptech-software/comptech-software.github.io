@@ -4,3 +4,18 @@ body {
     background-color: #333;
     color: white;
 }
+
+#jumbo-header {
+    padding: 3em;
+    background-image: url("https://picsum.photos/1920");
+    background-size: cover;
+    background-position: center;
+    background-color: #000a !important;
+}
+
+#jumbo-header .container {
+    padding: 3em;
+    background-color: #000a;
+    border-radius: 1em;
+
+}
