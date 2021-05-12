@@ -5,6 +5,7 @@
 body {
   background-color: #333;
   color: white;
+  padding-bottom: 2em;
 }
 
 #jumbo-header {
@@ -13,12 +14,33 @@ body {
   background-size: cover;
   background-position: center;
   background-color: #000a !important;
+  margin-bottom: 2em;
 }
-
 #jumbo-header .container {
   padding: 3em;
   background-color: #000a;
   border-radius: 1em;
+}
+
+#timeline #q1 {
+  background-color: skyblue;
+}
+#timeline #q2 {
+  background-color: palevioletred;
+}
+#timeline #q3 {
+  background-color: lightgreen;
+}
+#timeline #q4 {
+  background-color: palegoldenrod;
+}
+#timeline .card {
+  margin: 0.75em auto;
+}
+#timeline .card h3 {
+  color: #000;
+  text-align: center;
+  margin: 1em;
 }
 
 /*# sourceMappingURL=index.css.map */
