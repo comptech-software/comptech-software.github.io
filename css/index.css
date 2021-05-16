@@ -25,6 +25,9 @@ body {
   border-radius: 1em;
 }
 
+#timeline {
+  margin-bottom: 2em;
+}
 #timeline #q1 {
   background-color: skyblue;
 }
