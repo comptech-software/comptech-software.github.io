@@ -6,6 +6,10 @@ body {
     padding-bottom: 2em;
 }
 
+.card {
+    margin: 0.75em auto;
+}
+
 #jumbo-header {
     padding: 3em;
     background-size: cover;
@@ -26,13 +30,9 @@ body {
     #q3 { background-color: lightgreen; }
     #q4 { background-color: palegoldenrod; }
     
-    .card {
-        margin: 0.75em auto;
-
-        h3 {
-            color: #000;
-            text-align: center;
-            margin: 1em;
-        }
+    h3 {
+        color: #000;
+        text-align: center;
+        margin: 1em;
     }
 }

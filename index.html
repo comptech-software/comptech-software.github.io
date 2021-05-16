@@ -61,6 +61,7 @@
                 </p>
             </div>
         </div>
+
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="timeline">
             <div class="col">
                 <div class="card" id="q1">
@@ -74,16 +75,22 @@
                     <div class="modal-dialog">
                         <div class="modal-content bg-dark">
                             <div class="modal-header border-bottom-0">
-                                <h5 class="modal-title" id="q1ModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="q1ModalLabel">Quarter 1</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <p><strong>Objectives:</strong></p>
+                                <ul>
+                                    <li>Choose a programming language to build the course upon</li>
+                                    <li>Learn the basics of code management tools like Git and GitHub</li>
+                                    <li>Learn how to set up and operate the EV3 and CrowPi</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card" id="q2">
                     <div class="card-body">
@@ -96,16 +103,22 @@
                     <div class="modal-dialog">
                         <div class="modal-content bg-dark">
                             <div class="modal-header border-bottom-0">
-                                <h5 class="modal-title" id="q2ModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="q2ModalLabel">Quarter 2</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <p><strong>Objectives:</strong></p>
+                                <ul>
+                                    <li>Create a list of necessary critera for our robotics course</li>
+                                    <li>Plan the course's lesson structure</li>
+                                    <li>Assign a specific role to each team member</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card" id="q3">
                     <div class="card-body">
@@ -118,16 +131,21 @@
                     <div class="modal-dialog">
                         <div class="modal-content bg-dark">
                             <div class="modal-header border-bottom-0">
-                                <h5 class="modal-title" id="q3ModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="q3ModalLabel">Quarter 3</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <p><strong>Objectives:</strong></p>
+                                <ul>
+                                    <li>Learn the basics of web development using HTML, CSS, Bootstrap, and JavaScript</li>
+                                    <li>Write the content for each lesson in our course</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card" id="q4">
                     <div class="card-body">
@@ -140,13 +158,61 @@
                     <div class="modal-dialog">
                         <div class="modal-content bg-dark">
                             <div class="modal-header border-bottom-0">
-                                <h5 class="modal-title" id="q4ModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="q4ModalLabel">Quarter 4</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <p><strong>Objectives:</strong></p>
+                                <ul>
+                                    <li>Build the final website where the course will be hosted</li>
+                                    <li>Transfer written lesson content to our website</li>
+                                    <li>Create tutorial videos for specific lessons</li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h1>Our Team</h1>
+        </div>
+        
+        <div class="row row-cols-2 row-cols-md-4" id="team-photos">
+            <div class="col">
+                <div class="card bg-dark text-white">
+                    <img src="media/headshots/aidan.jpg" class="card-img" alt="Aidan Kelly">
+                    <div class="card-footer">
+                        <h5 class="card-title">Aidan Kelly</h5>
+                        <p class="card-text">Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark text-white">
+                    <img src="media/headshots/tyler.jpg" class="card-img" alt="Tyler Puglia">
+                    <div class="card-footer">
+                        <h5 class="card-title">Tyler Puglia</h5>
+                        <p class="card-text">Programming & Robotics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark text-white">
+                    <img src="media/headshots/isaiah.jpg" class="card-img" alt="Isaiah DiIorio">
+                    <div class="card-footer">
+                        <h5 class="card-title">Isaiah DiIorio</h5>
+                        <p class="card-text">Web Development</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark text-white">
+                    <img src="media/headshots/giovanni.jpg" class="card-img" alt="Giovanni Tashjian">
+                    <div class="card-footer">
+                        <h5 class="card-title">Giovanni Tashjian</h5>
+                        <p class="card-text">Moral Support</p>
                     </div>
                 </div>
             </div>
@@ -155,7 +221,7 @@
 
     <script>
         window.onload = function() {
-            randomizeBgImage("jumbo-header")
+            randomizeBgImage("jumbo-header");
         }
 
         function randomizeBgImage(id) {
