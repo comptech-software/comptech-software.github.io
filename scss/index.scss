@@ -1,0 +1,40 @@
+@use "navbar";
+
+body {
+    background-color: #333;
+    color: white;
+    padding-bottom: 2em;
+}
+
+.card {
+    margin: 0.75em auto;
+}
+
+#jumbo-header {
+    padding: 3em;
+    background-size: cover;
+    background-position: center;
+    background-color: #000a !important;
+    margin-bottom: 2em;
+
+    .container {
+        padding: 3em;
+        background-color: #000a;
+        border-radius: 1em;
+    }
+}
+
+#timeline {
+    margin-bottom: 2em;
+    
+    #q1 { background-color: skyblue; }
+    #q2 { background-color: palevioletred; }
+    #q3 { background-color: lightgreen; }
+    #q4 { background-color: palegoldenrod; }
+    
+    h3 {
+        color: #000;
+        text-align: center;
+        margin: 1em;
+    }
+}
