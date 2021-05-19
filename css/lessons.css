@@ -10734,8 +10734,11 @@ textarea.form-control-lg {
 }
 h1, .h1 {
   text-decoration: underline;
-  padding-top: 2rem;
   padding-bottom: 1rem;
+}
+
+.row {
+  margin: 2em auto;
 }
 
 /*# sourceMappingURL=lessons.css.map */
