@@ -15,7 +15,6 @@ body {
     background-size: cover;
     background-position: center;
     background-color: #000a !important;
-    margin-bottom: 2em;
 
     .container {
         padding: 3em;
@@ -25,8 +24,6 @@ body {
 }
 
 #timeline {
-    margin-bottom: 2em;
-    
     #q1 { background-color: skyblue; }
     #q2 { background-color: palevioletred; }
     #q3 { background-color: lightgreen; }
@@ -37,4 +34,8 @@ body {
         text-align: center;
         margin: 1em;
     }
+}
+
+.section {
+    margin-top: 2em;
 }
