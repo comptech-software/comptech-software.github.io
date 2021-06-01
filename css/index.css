@@ -17,7 +17,7 @@ body {
   background-size: cover;
   background-position: center;
   background-color: #000a !important;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 #jumbo-header .container {
   padding: 3em;
@@ -25,9 +25,10 @@ body {
   border-radius: 1em;
 }
 
-#timeline {
+.section {
   margin-bottom: 2em;
 }
+
 #timeline #q1 {
   background-color: skyblue;
 }
