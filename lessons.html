@@ -7,6 +7,7 @@
     <link href="bootstrap/compiled/css/bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap/compiled/js/bootstrap.bundle.min.js"></script>
     <link href="css/lessons.css" rel="stylesheet">
+    <link href="prism/prism.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -83,9 +84,29 @@
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>hello </p>
-                            <P> </P>
+                            <p>In this lesson, you will learn how to use the <code>datetime</code> module. You will also learn how to create and use variables in <code>print</code> functions.</p>
+                            
+                            <p>In its most basic form, a <code>print</code> function takes some text in quotations and prints it to the console.</p>
+                            <pre class="rounded language-python"><code>print("your_text_here")</code></pre>
+                            
+                            <p>Variables can also be put in the <code>print</code> function, even alongside text.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->num_apples = 10
+<!--                        -->print("I have " + num_apples + " apples.")<!--
+                        --></code></pre>
 
+                            <p>You can print out the current time with the help of the <code>datetime</code> module.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->from datetime import datetime
+<!--                        -->now = datetime.now()
+<!--                        -->print(now)<!--
+                         --></code></pre>
+                            <p>Here is a common mistake when printing variables:</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->num_apples = 10
+<!--                        -->print("num_apples")
+<!--                        --># This will print out the text "num_apples", not the value of the variable<!--
+                        --></code></pre>
                         </div>
                     </div>
                 </div>
@@ -97,7 +118,30 @@
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>hello</p>
+                            <p>In this lesson, you will learn how to create and manipulate lists, use the <code>random</code> module, and use <code>for</code> loops.</p>
+                            
+                            <p>To create a list, use square brackets and separate each item with a comma.</p>
+                            <pre class="rounded language-python"><code>my_list = ["pen", "pineapple", "apple", "pen"]</code></pre>
+                            
+                            <p>You can manipulate lists with the <code>append</code> function, the <code>insert</code> function, and the <code>remove</code> function.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->my_list.remove("pineapple")
+<!--                        -->my_list.insert(0, "apple")
+<!--                        -->my_list.append("pineapple")
+
+<!--                        -->print(my_list)
+<!--                        --># ["apple", "pen", "apple", "pen", "pineapple"]<!--
+                         --></code></pre>
+
+                            <p>Using the <code>random</code> module can be very helpful in <code>for</code> loops to make it so that they run a random number of times.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->import random
+
+<!--                        -->random_num = random.randint(1, 10)
+
+<!--                        -->for i in range(random_num):
+<!--                        -->    print("The loop has run" + i + "times")<!--
+                         --></code></pre>
                         </div>
                     </div>
                 </div>
@@ -258,5 +302,7 @@
             </div>
         </div>
     </div>
+
+    <script src="prism/prism.js"></script>
 </body>
 </html>
