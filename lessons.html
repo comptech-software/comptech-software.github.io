@@ -57,7 +57,7 @@
                             Lesson 1
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
                         <div class="accordion-body">
                             <p><strong>This is a placeholder for a video.</strong><p>
                             <p>This is an overview of which Python elements this course will cover.</p>
@@ -86,7 +86,7 @@
                             Lesson 2
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
                         <div class="accordion-body">
                             <p>In this lesson, you will learn how to use the <code>datetime</code> module. You will also learn how to create and use variables in <code>print</code> functions.</p>
                             
@@ -120,7 +120,7 @@
                             Lesson 3
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                         <div class="accordion-body">
                             <p>In this lesson, you will learn how to create and manipulate lists, use the <code>random</code> module, and use <code>for</code> loops.</p>
                             
@@ -160,9 +160,28 @@
                             Lesson 1
                         </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to set up and use the EV3 robot.</p>
+
+                            <h4>Setting up the EV3</h4>
+                            <ol>
+                                <li>Install the <code>ev3dev</code> operating system onto a microSD card</li>
+                                <ul>
+                                    <li>For more info, see <a href="https://www.ev3dev.org/docs/getting-started/">https://www.ev3dev.org/docs/getting-started/</a></li>
+                                </ul>
+                                <li>Insert the microSD card into the EV3 and power it on</li>
+                                <li>Pair your computer and the EV3 through Bluetooth (USB is another option, if you prefer)</li>
+                                <ol>
+                                    <li>Enable Bluetooth on your computer and make sure that it is visible</li>
+                                    <li>Wireless and Networks > Bluetooth > ensure "Powered" is checked > Start Scan > pair with your computer</li>
+                                    <ul>
+                                        <li>If using a school-provided MacBook, the computer's name will be its serial number</li>
+                                    </ul>
+                                </ol>
+                                <li>Install these VSCode extensions: "Python", "ev3dev-browser", "LEGO&reg; MINDSTORMS&reg; EV3 MicroPython"</li>
+                                <li>Connect to EV3 using “EV3DEV DEVICE BROWSER” tab near bottom-left of screen in “Explorer” view</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -172,9 +191,32 @@
                             Lesson 2
                         </button>
                     </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <h4>Lesson</h4>
+                            <p>In this lesson, you will laern how to print text to the EV3 screen.</p>
+                            
+                            <p>The first thing you'll want to do is add this line of code, which tells the EV3 which version of Python to run.</p>
+                            <pre class="rounded language-python"><code>#!/usr/bin/env python3</code></pre>
+
+                            <p>Next, import the <code>ev3dev</code> library.</p>
+                            <pre class="rounded language-python"><code>from ev3dev.ev3 import *</code></pre>
+
+                            <p>Lastly, change the EV3's font size so that it is easier to read.</p>
+                            <pre class="rounded language-python"><code>os.system("setfont Lat15-TerminusBold14")</code></pre>
+
+                            <p>You can clear the screen using this line of code:</p>
+                            <pre class="rounded language-python"><code>ev3.screen.clear()</code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Using what you know about importing, <code>print</code> statements, variables, and the EV3 screen:
+                                <ol>
+                                    <li>Import <code>sleep</code> from the <code>time</code> module (example: <code>sleep(1)</code> pauses the program for 1 second)</li>
+                                    <li>Store information about yourself in variables</li>
+                                    <li>Print these variables to the screen at a readable speed</li>
+                                </ol>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -184,9 +226,44 @@
                             Lesson 3
                         </button>
                     </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <h4>Lesson</h4>
+                            <p>In this lesson, you will laern how to plug in sensors and how to use them.</p>
+
+                            <p>In this lesson, we will use the touch sensor. It allows us to perform an action when it is pressed or released. You will also need to import <code>sound</code> so that the EV3 can play sounds.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->from ev3dev2.sensor.lego import TouchSensor
+<!--                        -->from ev3dev2.sound import Sound<!--
+                         --></code></pre>
+
+                            <p>To use the <code>sound</code> module, you must first assign it to a variable.</p>
+                            <pre class="rounded language-python"><code>sound = Sound()</code></pre>
+
+                            <p>Here is an example of what you can do with this functionality:</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->#!/usr/bin/env python3
+<!--                        -->from ev3dev.ev3 import *
+<!--                        -->from ev3dev2.sensor.lego import TouchSensor
+<!--                        -->from ev3dev2.sound import Sound
+<!--                        -->from time import sleep
+
+<!--                        -->ts = TouchSensor
+<!--                        -->sound = Sound()
+
+<!--                        -->if ts.is_pressed:
+<!--                        -->    sound.speak("The touch sensor is pressed")
+<!--                        -->    sleep(4)<!--
+                         --></code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Using what you have learned about variables and EV3 modules:
+                                <ol>
+                                    <li>Make the EV3 say a word or phrase that contains an incrementing variable each time the touch sensor is pressed</li>
+                                    <li>Allow the EV3 to speak until the touch sensor has been pressed 20 times</li>
+                                </ol>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -196,7 +273,7 @@
                             Lesson 4
                         </button>
                     </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -208,7 +285,7 @@
                             Lesson 5
                         </button>
                     </h2>
-                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -220,7 +297,7 @@
                             Lesson 6
                         </button>
                     </h2>
-                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -237,7 +314,7 @@
                             Lesson 1
                         </button>
                     </h2>
-                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -249,7 +326,7 @@
                             Lesson 2
                         </button>
                     </h2>
-                    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -261,7 +338,7 @@
                             Lesson 3
                         </button>
                     </h2>
-                    <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+                    <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -273,7 +350,7 @@
                             Lesson 4
                         </button>
                     </h2>
-                    <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+                    <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -285,7 +362,7 @@
                             Lesson 5
                         </button>
                     </h2>
-                    <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+                    <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
@@ -297,7 +374,7 @@
                             Lesson 6
                         </button>
                     </h2>
-                    <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample">
+                    <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen">
                         <div class="accordion-body">
                             <p>empty</p>
                         </div>
