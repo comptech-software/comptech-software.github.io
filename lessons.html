@@ -275,7 +275,32 @@
                     </h2>
                     <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use the color sensor in conjunction with other robotics equipment.</p>
+
+                            <br />
+                            <h4>Lesson</h4>
+
+                            <p>To use the color sensor, you must first create an object</p>
+                            <pre class="rounded language-python"><code>cl = ColorSensor()</code></pre>
+
+                            <p>Next, you must configure some settings for the color sensor before you can use it.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->cl.mode = "COL-COLOR"
+<!--                        -->colors = ("unknown", "black", "blue", "green", "yellow", "red", "white", "brown")<!--
+                         --></code></pre>
+
+                            <p>Lastly, create a loopr that translates the sensor's numerical output to one of the colors we just defined.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->ts = TouchSensor()
+
+<!--                        --># Executes whenever the touch sensor is pressed down
+<!--                        -->while not ts.value():
+<!--                        -->    print(colors[cl.value()])<!--
+                         --></code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Create a program that makes the EV3 speak the color it sees whenever the touch sensor is pressed.</p>
                         </div>
                     </div>
                 </div>
@@ -287,7 +312,44 @@
                     </h2>
                     <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use the ultrasonic sensor and change the colors of the EV3's LEDs.</p>
+
+                            <br />
+                            <h4>Lesson</h4>
+
+                            <p>First, import the LED module.</p>
+                            <pre class="rounded language-python"><code>from ev3dev2.led import leds</code></pre>
+
+                            <p>To set the color of the LEDs, call the <code>set_color()</code> method with the LED identifier and the desired color.</p>
+                            <pre class="rounded language-python"><code><!--
+                            --># Possible colors: RED, ORANGE, AMBER, YELLOW, GREEN, BLACK (turns LED off)
+
+<!--                        -->leds.set_color("LEFT", "GREEN")
+<!--                        -->leds.set_color("RIGHT", "ORANGE")<!--
+                         --></code></pre>
+
+                            <p>To use the ultrasonic sensor, import the relevant module</p>
+                            <pre class="rounded language-python"><code>from ev3dev2.sensor.lego import UltrasonicSensor</code></pre>
+
+                            <p>Then, declare it as an object.</p>
+                            <pre class="rounded language-python"><code>us = UltrasonicSensor()</code></pre>
+
+                            <p>You can use the sensor to run code, for instance, if an object is closer than 10 inches.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->if us.distance_inches &lt; 10:
+<!--                        -->    # Your code here<!--
+                         --></code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Using what you have learned, change the color of the LEDs depending on an object's proximity:
+                                <ul>
+                                    <li>Red if an object is closer than 5 inches</li>
+                                    <li>Amber if an object is closer than 10 inches</li>
+                                    <li>Green if an object is further than 10 inches</li>
+                                    <li>Black if no object is detected</li>
+                                </ul>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -299,7 +361,23 @@
                     </h2>
                     <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use motors to move the EV3 and navigate a maze.</p>
+
+                            </br >
+                            <h4>Lesson</h4>
+
+                            <p>As usual, you must import the necessary modules to interface with the motors.</p>
+                            <pre class="rounded language-python"><code>from ev3dev2.motor import LargeMotor, MoveSteering, OUTPUT_A, OUTPUT_D</code></pre>
+
+                            <p>Then, create an object.</p>
+                            <pre class="rounded language-python"><code>steer_pair = MoveSteering(OUTPUT_A, OUTPUT_D, motor_class=LargeMotor)</code></pre>
+                            
+                            <p>After that, you can use the following method with the turning distance, speed, and duration as arguments.</p>
+                            <pre class="rounded language-python"><code>steer_pair.on_for_seconds(steering=-70, speed=50, seconds=10)</code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Create some sort of maze that the EV3 will navigate. You could construct a real, physical maze, or lay some colored tape on the floor, for instance. Then, using the ultrasonic and/or color sensor as well as the motors, build a program that navigates your maze from start to finish.
                         </div>
                     </div>
                 </div>
