@@ -174,13 +174,13 @@
                                 <li>Pair your computer and the EV3 through Bluetooth (USB is another option, if you prefer)</li>
                                 <ol>
                                     <li>Enable Bluetooth on your computer and make sure that it is visible</li>
-                                    <li>Wireless and Networks > Bluetooth > ensure "Powered" is checked > Start Scan > pair with your computer</li>
+                                    <li>On the EV3: Wireless and Networks > Bluetooth > ensure "Powered" is checked > Start Scan > pair with your computer</li>
                                     <ul>
                                         <li>If using a school-provided MacBook, the computer's name will be its serial number</li>
                                     </ul>
                                 </ol>
                                 <li>Install these VSCode extensions: "Python", "ev3dev-browser", "LEGO&reg; MINDSTORMS&reg; EV3 MicroPython"</li>
-                                <li>Connect to EV3 using “EV3DEV DEVICE BROWSER” tab near bottom-left of screen in “Explorer” view</li>
+                                <li>Connect to EV3 using the “EV3DEV DEVICE BROWSER” tab near the bottom-left of VSCode in the “Explorer” view</li>
                             </ol>
                         </div>
                     </div>
@@ -193,16 +193,18 @@
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
                         <div class="accordion-body">
+                            <p>In this lesson, you will learn how to print text to the EV3 screen.</p>
+
+                            <br />
                             <h4>Lesson</h4>
-                            <p>In this lesson, you will laern how to print text to the EV3 screen.</p>
                             
-                            <p>The first thing you'll want to do is add this line of code, which tells the EV3 which version of Python to run.</p>
+                            <p>The first thing you'll want to do is add this line of code, which tells the EV3 which version of Python to run. <strong>It is recommended that you add this line to every Python program you create.</strong></p>
                             <pre class="rounded language-python"><code>#!/usr/bin/env python3</code></pre>
 
                             <p>Next, import the <code>ev3dev</code> library.</p>
                             <pre class="rounded language-python"><code>from ev3dev.ev3 import *</code></pre>
 
-                            <p>Lastly, change the EV3's font size so that it is easier to read.</p>
+                            <p>Lastly, change the EV3's font size so that text is easier to read.</p>
                             <pre class="rounded language-python"><code>os.system("setfont Lat15-TerminusBold14")</code></pre>
 
                             <p>You can clear the screen using this line of code:</p>
@@ -228,8 +230,10 @@
                     </h2>
                     <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven">
                         <div class="accordion-body">
+                            <p>In this lesson, you will learn how to plug in sensors and how to use them.</p>
+                            
+                            <br />
                             <h4>Lesson</h4>
-                            <p>In this lesson, you will laern how to plug in sensors and how to use them.</p>
 
                             <p>In this lesson, we will use the touch sensor. It allows us to perform an action when it is pressed or released. You will also need to import <code>sound</code> so that the EV3 can play sounds.</p>
                             <pre class="rounded language-python"><code><!--
