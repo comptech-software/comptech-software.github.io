@@ -396,7 +396,7 @@
                     </h2>
                     <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to connect to the CrowPi and use it to execute programs.</p>
                         </div>
                     </div>
                 </div>
@@ -408,7 +408,32 @@
                     </h2>
                     <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use the buzzer and the touch sensor on the CrowPi.</p>
+                            
+                            <br />
+                            <h4>Lesson</h4>
+
+                            <p>First, import the <code>GPIO</code> module so that you can interface with the CrowPi's I/O devices.</p>
+                            <pre class="rounded language-python"><code>import RPi.GPIO as GPIO</code></pre>
+
+                            <p>Then, it's recommended that you store the pin IDs for the buzzer and touch sensor in variables. In Python, constants are typically named in all caps.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->TOUCH_PIN = 17
+<!--                        -->BUZZER_PIN = 18<!--
+                         --></code></pre>
+
+                            <p>You can access the touch sensor's value (<code>True</code> or <code>False</code>) using the following method:</p>
+                            <pre class="rounded language-python"><code>GPIO.input(TOUCH_PIN)</code></pre>
+
+                            <p>You can interact with the buzzer by setting its pin high (on) or low (off).</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->GPIO.output(BUZZER_PIN, GPIO.HIGH)
+<!--                        -->GPIO.output(BUZZER_PIN, GPIO.LOW)<!--
+                         --></code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Create a program that toggles the buzzer every time the touch sensor is pressed.</p>
                         </div>
                     </div>
                 </div>
@@ -420,7 +445,49 @@
                     </h2>
                     <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to display text on the CrowPi's LCD screen.</p>
+
+                            <br />
+                            <h4>Lesson</h4>
+
+                            <p>First, import the module that controls the LCD screen.</p>
+                            <pre class="rounded language-python"><code>import Adafruit_CharLCD as LCD</code></pre>
+
+                            <p>Then, store the number of columns and rows in the LCD display.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->LCD_COLUMNS = 16
+<!--                        -->LCD_ROWS = 2<!--
+                         --></code></pre>
+
+                            <p>Declare an object to interface with the screen.</p>
+                            <pre class="rounded language-python"><code>lcd = LCD.Adafruit_CharLCDBackpack(address=0x21)</code></pre>
+
+                            <p>You can now use a variety of methods to control the screen, including:</p>
+                            <pre class="rounded language-python"><code><!--
+                            --># Enable the backlight
+<!--                        -->lcd.set_backlight(0)
+
+<!--                        --># Show a cursor when writing a text message
+<!--                        -->lcd.show_cursor(True)
+
+<!--                        --># Make the cursor blink
+<!--                        -->lcd.blink(True)
+
+<!--                        --># Write a message to the screen
+<!--                        -->lcd.message("Test")
+
+<!--                        --># Move the cursor around
+<!--                        -->lcd.move_right()
+<!--                        -->lcd.move_left()
+
+<!--                        --># Clear the screen
+<!--                        -->lcd.clear()<!--
+                         --></code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+
+                            <p>Use the LCD screen to display a short message about your day.</p>
                         </div>
                     </div>
                 </div>
@@ -432,7 +499,57 @@
                     </h2>
                     <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use the CrowPi's ultrasonic sensor.</p>
+
+                            <br />
+                            <h4>Lesson</h4>
+
+                            <p>First, import the <code>time</code> and <code>GPIO</code> modules.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->import RPi.GPIO as GPIO
+<!--                        -->import time<!--
+                         --></code></pre>
+
+                            <p>Then, switch the board mode and store the necessary pin values.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->GPIO.setmode(GPIO.BCM)
+
+<!--                        -->GPIO_TRIGGER = 18
+<!--                        -->GPIO_ECHO = 24<!--
+                         --></code></pre>
+
+                            <p>You will then need to define a function that uses the sensor's input to return a distance value. Here is one such implementation:</p>
+                            <pre class="rounded language-python"><code><!--
+                            --># This particular function will return a distance in centimeters
+<!--                        -->def distance():
+<!--                        -->    # Set trigger to high
+<!--                        -->    GPIO.output(GPIO_TRIGGER, True)
+
+<!--                        -->    # Set trigger to low after 0.01 ms
+<!--                        -->    time.sleep(0.00001)
+<!--                        -->    GPIO.output(GPIO_TRIGGER, False)
+
+<!--                        -->    # Store time when object is first detected
+<!--                        -->    while GPIO.input(GPIO_ECHO) == 0:
+<!--                        -->        start_time = time.time()
+
+<!--                        -->    # Store time when object is last detected
+<!--                        -->    while GPIO.input(GPIO_ECHO) == 1:
+<!--                        -->        end_time = time.time()
+
+<!--                        -->    time_elapsed = stop_time - start_time
+
+<!--                        -->    # Multiply by the speed of sound (34300 cm/s)
+<!--                        -->    # Divide by 2 to account for the time it takes the waves to bounce back to the sensor
+<!--                        -->    distance = (time_elapsed * 34300) / 2
+
+<!--                        -->    return distance<!--
+                         --></code></pre>
+
+                            <br />
+                            <h4>Challenge</h4>
+
+                            <p>Create a program that displays an object's proximity to the ultrasonic sensor on the LCD screen. If the object is closer than a certain distance, sound the buzzer until it moves further away.</p>
                         </div>
                     </div>
                 </div>
