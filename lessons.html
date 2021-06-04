@@ -574,7 +574,36 @@
                     </h2>
                     <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use the CrowPi's sound sensor.</p>
+
+                            <br />
+                            <h4>Lesson</h4>
+                            <p>To use the sound sensor, you must import its module and set its pin.</p>
+
+                            <pre class="rounded language-python"><code><!--
+                            -->import RPi.GPIO as GPIO
+
+<!--                        -->SOUND_PIN = 24<!--
+                         --></code></pre>
+
+                            <p>Next, configure the sensor properly.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->GPIO.setmode(GPIO.BCM)
+<!--                        -->GPIO.setup(SOUND_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)<!--
+                         --></code></pre>
+
+                            <p>Here is an example of how you can use the sensor's <code>True</code> or <code>False</code> output:</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->while True:
+<!--                        -->    if GPIO.input(SOUND_PIN):
+<!--                        -->        print("Sound detected")<!--
+                         --></code></pre>
+
+                            <p>You'll notice that the sound sensor does not display volume-- it either detects sound or it doesn't. To adjust the sensitivity of the sound sensor, use the small blue potentiometer next to it. Turn the dial clockwise to lower the sensitivity and vice versa.</p>
+
+                            <br />
+                            <h4>Challenge</h4>
+                            <p>Display the sound sensor's output on the LCD screen in some form. Try different sensitivity values to ensure the sensor works with the noise level of your environment.</p>
                         </div>
                     </div>
                 </div>
@@ -586,7 +615,42 @@
                     </h2>
                     <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen">
                         <div class="accordion-body">
-                            <p>empty</p>
+                            <p>In this lesson, you will learn how to use the CrowPi's 8x8 LED dot matrix.</p>
+
+                            <br />
+                            <h4>Lesson</h4>
+
+                            <p>To use the dot matrix, there are quite a few modules that must be imported first.</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->import re
+<!--                        -->import time
+<!--                        -->from luma.led_matrix.device import max7219
+<!--                        -->from luma.core.interface.serial import spi, noop
+<!--                        -->from luma.core.render import canvas
+<!--                        -->from luma.core.virtual import viewport
+<!--                        -->from luma.core.legacy import text, show_message
+<!--                        -->from luma.core.legacy.font import proportional, CP437_font, TINY_FONT, SINCLAIR_FONT, LCD_FONT<!--
+                         --></code></pre>
+
+                            <p>Next, define the following function to interface with the matrix:</p>
+                            <pre class="rounded language-python"><code><!--
+                            -->def main(msg, scroll_delay):
+<!--                        -->    cascaded = 1
+<!--                        -->    block_orientation = 90
+<!--                        -->    rotate = 0
+<!--                        -->
+<!--                        -->    serial = spi(port=0, device=1, gpio=noop())
+<!--                        -->    device = max7219(serial, cascaded=cascaded or 1, block_orientation=block_orientation, rotate=rotate or 0)
+
+<!--                        -->    show_message(device, msg, fill="white", font=proportional(CP437_font), scroll_delay=scroll_delay)<!--
+                         --></code></pre>
+
+                            <p>You can now call this function, inputting your own values for <code>msg</code> and <code>scroll_delay</code>, to display messages on the matrix.</p>
+
+                            <br />
+                            <h4>Challenge</h4>
+
+                            <p>Create a program that enables the buzzer whenever the touch sensor is pressed. Additionally, each time the touch sensor is released, display the number of times it has been pressed on the dot matrix (e.g. "Pressed ___ times"). </p>
                         </div>
                     </div>
                 </div>
